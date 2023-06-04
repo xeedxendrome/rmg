@@ -22,8 +22,7 @@ const displayHeight = (val = -1) => {;
     ctx.fillText(`Current Height: ${val} (Max Height: 4)`, x, y);
     ctx.stroke();
 };
-
-const addedElems = (result) => {
+const addedElems = (result) => { 
     tableCells.forEach((cell, i) => {
         cell.textContent = result[i] >= 0 ? result[i] < 100 ? result[i] : "" : "";
     });
@@ -436,9 +435,9 @@ function onResize() {
 window.addEventListener("resize", onResize)
 
 const displayHeap = () => {
-    btHeapBtn.textContent = "Binary Tree Visualizer";
+    btHeapBtn.textContent = "Binary Search Tree Visualizer";
     header.textContent = "Heap Visualizer";
-    const selectHeap = document.createElement("select");
+  const selectHeap = document.createElement("select");
     selectHeap.id = "select_heap";
     selectHeap.addEventListener("change", () => {
         if (bst.heapType !== ["Min Heap", "Max Heap"][selectHeap.selectedIndex]) {
@@ -459,7 +458,7 @@ const displayHeap = () => {
         };
     });
 
-    ["Min Heap", "Max Heap"].map((elem) => {
+     ["Min Heap", "Max Heap"].map((elem) => {
         let option = document.createElement("option");
         option.id = elem;
         option.value = elem;
@@ -507,7 +506,7 @@ const displayHeap = () => {
 
 const displayBT = () => {
     btHeapBtn.textContent = "Heap Visualizer";
-    header.textContent = "Binary Tree Visualizer";
+    header.textContent = "Binary Search Tree Visualizer";
     controls.removeChild(controls.childNodes[0]);
     tableCells.forEach((cell) => {
         cell.textContent = "";
@@ -517,7 +516,7 @@ const displayBT = () => {
     const btBullets = ["Info - Binary Tree", "1. Each node in the Binary Tree can have a maximum of two children.", 
     "2. A leaf is a node with no children.",
     "3. A full Binary Tree is where every node has either zero or two children.", 
-    "4. Smallest value in the Binary Tree is the left most leaf and the largest is the right most.",
+    "4. Smallest value in the Binary Search Tree is the left most leaf and the largest is the right most.",
     "5. A complete Binary Tree is a Binary Tree in which all the levels are completely filled except possibly the lowest one, which is filled from the left."];
 
     const infoBullets = document.getElementById("info_bullets");
